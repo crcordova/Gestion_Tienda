@@ -5,7 +5,7 @@ def home (request):
     return render(request, "gestion_tienda/Home.html")
 
 def ventas(request):
-    return render(request, "gestion_tienda/Home.html")
+    return render(request, "gestion_tienda/ventas.html")
 
 def compras(request):
-    return render(request, "gestion_tienda/Home.html")
+    return render(request, "gestion_tienda/compras.html")
