@@ -3,7 +3,7 @@ from gestion.models import *
 # Register your models here.
 
 class ventas_Admin(admin.ModelAdmin):
-    list_display=("fecha","cliente_name","email","producto","entregado")
+    list_display=("fecha","cliente_name","email","producto","cantidad","entregado")
     date_hierarchy = "fecha"
     list_filter = ("fecha","region","pago", "producto", "entregado")
     # Clase con nombres de las columnas q se mostraran en el panel
@@ -28,8 +28,8 @@ class compra_Admin(admin.ModelAdmin):
     list_filter = ('fecha', 'producto')
 
 class product_Admin(admin.ModelAdmin):
-    list_display = ('nombre', 'proveedor', 'equipo')
-    list_filter = ['proveedor', 'equipo']
+    list_display = ('nombre', 'proveedor',)
+    list_filter = ['proveedor', 'categoria']
     search_fields = ['nombre', 'equipo']
 
 class proveedor_Admin(admin.ModelAdmin):
@@ -44,8 +44,8 @@ class region_Admin(admin.ModelAdmin):
 class pago_Admin(admin.ModelAdmin):
     list_display = ['metodo']
 
-class equipo_Admin(admin.ModelAdmin):
-    list_display = ['equipo']
+# class equipo_Admin(admin.ModelAdmin):
+#     list_display = ['equipo']
 
 admin.site.register(Venta, ventas_Admin)  #clientesAdmin clase con nombres a mostrar
 admin.site.register(Compra, compra_Admin) 
@@ -54,4 +54,4 @@ admin.site.register(Proveedor, proveedor_Admin)
 admin.site.register(Categorias, categoria_Admin)
 admin.site.register(Region, region_Admin)
 admin.site.register(Pago, pago_Admin)
-admin.site.register(Equipo, equipo_Admin)
+# admin.site.register(Equipo, equipo_Admin)

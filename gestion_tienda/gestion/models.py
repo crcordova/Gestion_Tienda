@@ -32,16 +32,17 @@ class Categorias (models.Model):
     def __str__(self):
         return self.categoria
 
-class Equipo (models.Model):
-    equipo = models.CharField(max_length=50, verbose_name='Tipo de Equipo') 
-    def __str__(self):
-        return self.equipo
+# class Equipo (models.Model):
+#     equipo = models.CharField(max_length=50, verbose_name='Tipo de Equipo') 
+#     def __str__(self):
+#         return self.equipo
 
 class Producto(models.Model):
     nombre = models.CharField(max_length=100, primary_key=True)
     proveedor = models.ForeignKey(Proveedor, on_delete=models.CASCADE)
-    equipo = models.ForeignKey(Equipo, on_delete=models.CASCADE, blank=True, null=True)
-    categoria = models.ManyToManyField(Categorias)
+    # equipo = models.ForeignKey(Equipo, on_delete=models.CASCADE, blank=True, null=True)
+    categoria = models.ManyToManyField(Categorias,related_name='Categoria_1')
+    # categoria2 = models.ManyToManyField(Categorias,related_name='Categoria_2', blank=True)
     detalle = models.TextField(max_length=500, blank=True, null=True)
     def __str__(self):
         return self.nombre

@@ -7,13 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ventas Tienda</title>
 </head>
-<ul class="nav">
-    <li><a href="{% url 'Ventas' %}">Ventas Totales</a></li>
-    <li><a href="{% url 'ventas_product' %}">Ventas x Producto</a></li>
-    <li><a href="{% url 'ventas_region' %}">Ventas x Region</a></li>
-    <li><a href="#">otro</a></li>
-</ul>
-<p>Pagina de Gestión de ventas</p>
+
+<p>Inventario</p>
 <body>
     <h1>{{name}}</h1>
     <form action="" method="POST"> {% csrf_token %}

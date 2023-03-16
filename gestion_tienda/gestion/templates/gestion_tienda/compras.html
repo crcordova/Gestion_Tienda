@@ -9,9 +9,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compras Tienda</title>
 </head>
-
+<ul class="nav">
+    <li><a href="{% url 'Compras' %}">Compras Totales</a></li>
+    <li><a href="{% url 'compra_proveedor' %}">Ventas x Proveedor</a></li>
+    <li><a href="#">otro</a></li>
+</ul>
+<p>Pagina de Gestión de Compras</p>
 <body>
-    <p>Gestion de compras</p>
+    <h1>{{name}}</h1>
+    <form action="" method="POST"> {% csrf_token %}
+        <table>
+            {{formu.as_table}}
+        </table>
+        <input type="submit" value="Enviar" style="width: 150px">
+    </form>
 </body>
 {% endblock %}
 </html>
